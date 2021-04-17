@@ -26,7 +26,7 @@ class VentaFormRequest extends FormRequest
         return [
             'idcliente'=>'required',
             'tipodocumento'=>'required|max:20',
-            'numero'=>'required|max:20|unique:ventas,numero',
+            'numero'=>'required|max:20|unique:ventas,numero,NULL,idventa,tipodocumento,'.$this->tipodocumento,
             'fecha'=>'required',
             'vencimiento'=>'required',
             'totalventa'=>'required',
@@ -36,3 +36,9 @@ class VentaFormRequest extends FormRequest
         ];
     }
 }
+
+/*
+
+Valida que el numero sea único cuando el tipodocumento es el mismo.
+'numero'=>'required|max:20|unique:ventas,numero,NULL,idventa,tipodocumento,'.$this->tipodocumento,
+*/

@@ -86,7 +86,7 @@ class VentaController extends Controller
     		$venta->impuesto='19';
             $venta->totalventa=$request->get('totalventa');
     		$venta->estado='Pendiente';
-    		$venta->save();
+			$venta->save();
 
     		$idproducto=$request->get('idproducto');
     		$cantidad=$request->get('cantidad');
