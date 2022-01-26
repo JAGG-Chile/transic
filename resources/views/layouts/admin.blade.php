@@ -3,7 +3,7 @@
   <head><meta http-equiv="Content-Type" content="text/html; charset=gb18030">
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>BREMA | Gestión de Compras y Ventas</title>
+    <title>BREMA 1.0</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
