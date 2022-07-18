@@ -20,7 +20,9 @@ class Productos extends Model
     	'stockminimo',
     	'stockactual',
     	'idcategoria',
-    	'estado'
+    	'estado',
+		'ult_inventario_fecha',
+		'ult_inventario_stock'
     ];
 
     protected $guarded=[

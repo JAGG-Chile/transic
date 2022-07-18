@@ -76,6 +76,8 @@ class ProductoController extends Controller
     	$producto->stockactual=$Request->get('stockactual');
     	$producto->estado="Activo";
     	$producto->tipo=$Request->get('tipo');
+        $producto->ult_inventario_fecha=$Request->get('ultinventariofecha');
+        $producto->ult_inventario_stock=$Request->get('ultinventariostock');
     	$producto->save();
     	return Redirect::to('almacen/producto');    	   	
     }
@@ -103,6 +105,8 @@ class ProductoController extends Controller
     	$producto->precio=$Request->get('precio');
     	$producto->stockactual=$Request->get('stockactual');
     	$producto->tipo=$Request->get('tipo');
+        $producto->ult_inventario_fecha=$Request->get('ultinventariofecha');
+        $producto->ult_inventario_stock=$Request->get('ultinventariostock');
     	$producto->update();
     	return Redirect::to('almacen/producto'); 
     }

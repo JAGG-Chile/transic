@@ -70,6 +70,18 @@
             </select>
 		</div>
 	</div>
+	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+		<div class="form-group">
+			<label for="ultinventariofecha">Ultimo Inventario Fecha</label>
+			<input type="date" name="ultinventariofecha" class="form-control" placeholder="Fecha último inventario ...">
+		</div>
+	</div>
+	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		<div class="form-group">
+			<label for="ultinventariostock">Ultimo Inventario Stock</label>
+			<input type="number" step="0.01" name="ultinventariostock" class="form-control" placeholder="Stock último inventario ...">
+		</div>
+	</div>
 	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 		<div class="form-group">
 			<button class="btn btn-primary" type="Submit">Guardar</button>
