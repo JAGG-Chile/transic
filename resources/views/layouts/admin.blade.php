@@ -3,7 +3,7 @@
   <head><meta http-equiv="Content-Type" content="text/html; charset=gb18030">
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>BREMA 1.0</title>
+    <title>Transic 1.0</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
@@ -28,16 +28,16 @@
         <!-- Logo -->
         <a href="/home" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>QB</b></span>
+          <span class="logo-mini"><b>TR</b></span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>Brema SpA</b></span>
+          <span class="logo-lg"><b>Transic Ltda</b></span>
         </a>
 
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
           <!-- Sidebar toggle button-->
           <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-            <span class="sr-only">Navegación/span>
+            <span class="sr-only">Navegación</span>
           </a>
           <!-- Navbar Right Menu -->
           <div class="navbar-custom-menu">
@@ -53,13 +53,13 @@
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
-                  <li class="user-header">
+                  {{-- <li class="user-header">
                     
                     <p>
-                      www.webfacilito.cl - Desarrollo de Software
-                      <small>www.webfacilito.cl</small>
-                    </p>
-                  </li>
+                      Juan Garcìa - Desarrollo de Software
+                      <small>https://juan-garcia.cl</small>
+                    </p> 
+                  </li> --}}
                   
                   <!-- Menu Footer-->
                   <li class="user-footer">
@@ -89,67 +89,86 @@
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-laptop"></i>
-                <span>Inventario</span>
+                <span>Administración</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
-              <ul class="treeview-menu">
-                <li><a href="{{url('almacen/producto')}}"><i class="fa fa-circle-o"></i> Productos</a></li>
-                <li><a href="{{url('almacen/categoria')}}""><i class="fa fa-circle-o"></i> Categorías</a></li>
-              </ul>
+               <ul class="treeview-menu">
+                {{--
+                <li><a href="{{url('almacen/producto')}}"><i class="fa fa-circle-o"></i> Compras</a></li>
+                <li><a href="{{url('almacen/categoria')}}""><i class="fa fa-circle-o"></i> Articulos</a></li>
+                <li><a href="{{url('almacen/categoria')}}""><i class="fa fa-circle-o"></i> Vehiculos</a></li>
+                <li><a href="{{url('almacen/categoria')}}""><i class="fa fa-circle-o"></i> Proveedores</a></li>
+                <li><a href="{{url('almacen/categoria')}}""><i class="fa fa-circle-o"></i> Marcas</a></li>
+                <li><a href="{{url('almacen/categoria')}}""><i class="fa fa-circle-o"></i> Modelos</a></li>
+                --}}
+                <li><a href="#"><i class="fa fa-circle-o"></i> Compras</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i> Articulos</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i> Vehiculos</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i> Proveedores</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i> Marcas</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i> Modelos</a></li>
+              </ul> 
+
             </li>
             
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-th"></i>
-                <span>Compras</span>
+                <i class="fa fa-wrench"></i>
+                <span>Mantenciones</span>
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
+                {{-- 
                 <li><a href="{{url('compras/compra')}}"><i class="fa fa-circle-o"></i> Ingresos</a></li>
                 <li><a href="{{url('compras/proveedor')}}"><i class="fa fa-circle-o"></i> Proveedores</a></li>
                 <li><a href="{{url('compras/pagos')}}"><i class="fa fa-circle-o"></i> Pagos</a></li>
+                 --}}
+                 <li><a href="#"><i class="fa fa-circle-o"></i> Ingresar Mantenimiento</a></li>
               </ul>
+
             </li>
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-shopping-cart"></i>
-                <span>Ventas</span>
+                <i class="fa fa-truck"></i>
+                <span>Hoja de Ruta</span>
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="{{url('ventas/venta')}}"><i class="fa fa-circle-o"></i> Ingresos</a></li>
-                <li><a href="{{url('ventas/cliente')}}"><i class="fa fa-circle-o"></i> Clientes</a></li>
+                {{-- <li><a href="{{url('ventas/venta')}}"><i class="fa fa-circle-o"></i> Iniciar Vuelta</a></li>
+                <li><a href="{{url('ventas/cliente')}}"><i class="fa fa-circle-o"></i> Ingresar Recarga</a></li>
+                <li><a href="{{url('ventas/cliente')}}"><i class="fa fa-circle-o"></i> Finalizar Vuelta</a></li> --}}
+                <li><a href="#"><i class="fa fa-circle-o"></i> Iniciar Vuelta</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i> Ingresar Recarga</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i> Finalizar Vuelta</a></li>
               </ul>
             </li>
                      
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-fw fa-database"></i> <span>REPORTES</span> <i class="fa fa-angle-left pull-right"></i>
+                <i class="fa fa-print"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
 
-              <ul class="treeview-menu">
-                <!--<li class="active"><a href="javascript:void(0);" onclick="cargarlistado(3,1);" ><i class="fa fa-circle-o"></i> Reportes </a></li> -->
-                <li><a href="{{url('consulta_ventas')}}"><i class="fa fa-circle-o"></i> Ventas por Cliente</a></li>
+              <ul class="treeview-menu">                
+                {{-- <li><a href="{{url('consulta_ventas')}}"><i class="fa fa-circle-o"></i> Ventas por Cliente</a></li>
                 <li><a href="{{url('consulta_productos')}}"><i class="fa fa-circle-o"></i> Ventas por Producto</a></li>
                 <li><a href="{{url('consulta_deudaxcliente')}}"><i class="fa fa-circle-o"></i> Deuda por Cliente</a></li>
                 <li><a href="{{url('consulta_ctactexproducto')}}"><i class="fa fa-circle-o"></i> Cta.Cte. por Producto</a></li>
-                <li><a href="{{url('pdf')}}"><i class="fa fa-circle-o"></i> Otros Reportes</a></li> 
+                <li><a href="{{url('pdf')}}"><i class="fa fa-circle-o"></i> Otros Reportes</a></li>  --}}
               </ul>
             </li>  
 
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-folder"></i> <span>Acceso</span>
+                <i class="fa fa-users"></i> <span>Control de Acceso</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="{{url('seguridad/usuario')}}"><i class="fa fa-circle-o"></i> Usuarios</a></li>
-                
+                <li><a href="{{url('seguridad/usuario')}}"><i class="fa fa-circle-o"></i> Mantención de Usuarios</a></li>                
               </ul>
             </li>
              <li>
-             <a href="{{url('Manual.pdf')}}" target="_blank">
-                <i class="fa fa-plus-square"></i> <span>Ayuda</span>
+             <a href="#">
+                <i class="fa fa-book"></i> <span>Ayuda</span>
                 <small class="label pull-right bg-red">PDF</small>
               </a>
             </li>
@@ -165,10 +184,6 @@
         <!-- /.sidebar -->
       </aside>
 
-
-
-
-
        <!--Contenido-->
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
@@ -180,7 +195,7 @@
             <div class="col-md-12">
               <div class="box">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Gestión de Compras y Ventas</h3>
+                  <h3 class="box-title">Sistema Transic Ltda.</h3>
                   <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     
@@ -210,9 +225,9 @@
       <!--Fin-Contenido-->
       <footer class="main-footer">
         <div class="pull-right hidden-xs">
-          <b>Version</b> 1.0.0
+          <b>Version</b> 1.0
         </div>
-        <strong>Copyright &copy; 2018-2020 <a href="http://www.webfacilito.cl" target="_blank">www.webfacilito.cl</a>.</strong> All rights reserved.
+        <strong>Desarrollado por <a href="http://juan-garcia.cl" target="_blank">www.juan-garcia.cl</a>.</strong> para Transic Ltda. &copy All rights reserved.
       </footer>
 
       

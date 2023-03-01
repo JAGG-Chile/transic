@@ -8,7 +8,9 @@
                 <!--<div class="panel-heading">Bienvenido al Sistema-->
 
                     <div class="panel-body">
-                        <img src="{{URL::asset('img/Logo.png')}}" width="700"
+                        {{-- 
+                            LOGO DE PANTALLA PRINCIPAL
+                            <img src="{{URL::asset('img/Logo.png')}}" width="700"> --}}
                     </div>
                 <!--</div>-->
         </div>
