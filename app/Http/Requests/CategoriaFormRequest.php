@@ -1,6 +1,6 @@
 <?php
 
-namespace qbrema\Http\Requests;
+namespace Transic\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

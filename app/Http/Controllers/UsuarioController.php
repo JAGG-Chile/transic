@@ -1,11 +1,11 @@
 <?php
 
-namespace qbrema\Http\Controllers;
+namespace Transic\Http\Controllers;
 
 use Illuminate\Http\Request;
-use qbrema\User;
+use Transic\User;
 use Illuminate\Support\Facades\Redirect;
-use qbrema\Http\Requests\UsuarioFormRequest;
+use Transic\Http\Requests\UsuarioFormRequest;
 use DB;
 
 class UsuarioController extends Controller

@@ -1,8 +1,8 @@
 <?php
 
-namespace qbrema\Http\Controllers\Auth;
+namespace Transic\Http\Controllers\Auth;
 
-use qbrema\Http\Controllers\Controller;
+use Transic\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class PasswordController extends Controller

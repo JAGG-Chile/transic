@@ -1,8 +1,8 @@
 <?php
 
-namespace qbrema\Http\Controllers;
+namespace Transic\Http\Controllers;
 
-use qbrema\Http\Requests;
+use Transic\Http\Requests;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller

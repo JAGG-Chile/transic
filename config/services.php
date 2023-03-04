@@ -30,7 +30,7 @@ return [
     ],
 
     'stripe' => [
-        'model' => qbrema\User::class,
+        'model' => Transic\User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],

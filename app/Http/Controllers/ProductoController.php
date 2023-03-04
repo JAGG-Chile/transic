@@ -1,11 +1,11 @@
 <?php
 
-namespace qbrema\Http\Controllers;
+namespace Transic\Http\Controllers;
 
 use Illuminate\Http\Request;
-use qbrema\Productos;
+use Transic\Productos;
 use Illuminate\Support\Facades\Redirect;
-use qbrema\Http\Requests\ProductoFormRequest;
+use Transic\Http\Requests\ProductoFormRequest;
 use DB;
 
 class ProductoController extends Controller

@@ -4,7 +4,7 @@ namespace Transic\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AjusteFormRequest extends FormRequest
+class MarcaFormRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,7 @@ class AjusteFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'idajustes'=>'required',
-            'movto'=>'required',
-            'glosa'=>'required|max:250',
-            'fecha'=>'required',
-            'cantidad'=>'required'
+            'nombre'=>'required|max:50|unique:marcas'
         ];
     }
 }

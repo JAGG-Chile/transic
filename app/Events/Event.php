@@ -1,6 +1,6 @@
 <?php
 
-namespace qbrema\Events;
+namespace Transic\Events;
 
 abstract class Event
 {

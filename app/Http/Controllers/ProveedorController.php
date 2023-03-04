@@ -1,11 +1,11 @@
 <?php
 
-namespace qbrema\Http\Controllers;
+namespace Transic\Http\Controllers;
 
 use Illuminate\Http\Request;
-use qbrema\Personas;
+use Transic\Personas;
 use Illuminate\Support\Facades\Redirect;
-use qbrema\Http\Requests\PersonaFormRequest;
+use Transic\Http\Requests\PersonaFormRequest;
 use DB;
 
 class ProveedorController extends Controller

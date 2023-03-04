@@ -1,11 +1,11 @@
 <?php
 
-namespace qbrema\Http\Controllers;
+namespace Transic\Http\Controllers;
 
 use Illuminate\Http\Request;
-use qbrema\Categorias;
+use Transic\Categorias;
 use Illuminate\Support\Facades\Redirect;
-use qbrema\Http\Requests\CategoriaFormRequest;
+use Transic\Http\Requests\CategoriaFormRequest;
 use Illuminate\Support\Facades\Input;
 use DB;
 

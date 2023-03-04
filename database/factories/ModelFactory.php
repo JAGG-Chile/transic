@@ -11,7 +11,7 @@
 |
 */
 
-$factory->define(qbrema\User::class, function (Faker\Generator $faker) {
+$factory->define(Transic\User::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->safeEmail,

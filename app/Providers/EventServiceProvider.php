@@ -1,6 +1,6 @@
 <?php
 
-namespace qbrema\Providers;
+namespace Transic\Providers;
 
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -13,8 +13,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'qbrema\Events\SomeEvent' => [
-            'qbrema\Listeners\EventListener',
+        'Transic\Events\SomeEvent' => [
+            'Transic\Listeners\EventListener',
         ],
     ];
 

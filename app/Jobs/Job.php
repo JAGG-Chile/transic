@@ -1,6 +1,6 @@
 <?php
 
-namespace qbrema\Jobs;
+namespace Transic\Jobs;
 
 use Illuminate\Bus\Queueable;
 

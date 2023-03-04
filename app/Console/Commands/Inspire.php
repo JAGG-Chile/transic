@@ -1,6 +1,6 @@
 <?php
 
-namespace qbrema\Console\Commands;
+namespace Transic\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;

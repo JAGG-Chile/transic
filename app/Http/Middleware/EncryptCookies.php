@@ -1,6 +1,6 @@
 <?php
 
-namespace qbrema\Http\Middleware;
+namespace Transic\Http\Middleware;
 
 use Illuminate\Cookie\Middleware\EncryptCookies as BaseEncrypter;
 

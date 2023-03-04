@@ -152,10 +152,10 @@ return [
         /*
          * Application Service Providers...
          */
-        qbrema\Providers\AppServiceProvider::class,
-        qbrema\Providers\AuthServiceProvider::class,
-        qbrema\Providers\EventServiceProvider::class,
-        qbrema\Providers\RouteServiceProvider::class,
+        Transic\Providers\AppServiceProvider::class,
+        Transic\Providers\AuthServiceProvider::class,
+        Transic\Providers\EventServiceProvider::class,
+        Transic\Providers\RouteServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
 
         

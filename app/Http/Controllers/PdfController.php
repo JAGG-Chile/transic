@@ -1,16 +1,16 @@
 <?php
 
-namespace qbrema\Http\Controllers;
+namespace Transic\Http\Controllers;
 
 use Illuminate\Http\Request;
-use qbrema\Categorias;
-use qbrema\Ventas;
-use qbrema\DetalleVentas;
-use qbrema\Productos;
-use qbrema\Personas;
+use Transic\Categorias;
+use Transic\Ventas;
+use Transic\DetalleVentas;
+use Transic\Productos;
+use Transic\Personas;
 use Illuminate\Support\Facades\Redirect;
-use qbrema\Http\Requests\CategoriaFormRequest;
-use qbrema\Http\Requests\VentaFormRequest;
+use Transic\Http\Requests\CategoriaFormRequest;
+use Transic\Http\Requests\VentaFormRequest;
 use DB;
 
 

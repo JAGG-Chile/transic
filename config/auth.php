@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => qbrema\User::class,
+            'model' => Transic\User::class,
         ],
 
         // 'users' => [

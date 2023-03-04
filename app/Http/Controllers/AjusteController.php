@@ -1,15 +1,15 @@
 <?php
 
-namespace qbrema\Http\Controllers;
+namespace Transic\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use qbrema\Http\Requests;
+use Transic\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
-use qbrema\Http\Requests\AjusteFormRequest;
-//use qbrema\Ajustes;
-//use qbrema\DetalleCompras;
+use Transic\Http\Requests\AjusteFormRequest;
+//use Transic\Ajustes;
+//use Transic\DetalleCompras;
 use DB;
 
 use Carbon\Carbon;

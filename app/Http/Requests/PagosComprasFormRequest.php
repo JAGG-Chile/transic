@@ -1,8 +1,8 @@
 <?php
 
-namespace qbrema\Http\Requests;
+namespace Transic\Http\Requests;
 
-use qbrema\Http\Requests\Request;
+use Transic\Http\Requests\Request;
 
 class PagosComprasFormRequest extends Request
 {

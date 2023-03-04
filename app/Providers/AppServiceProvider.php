@@ -1,6 +1,6 @@
 <?php
 
-namespace qbrema\Providers;
+namespace Transic\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

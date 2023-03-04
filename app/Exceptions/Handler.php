@@ -1,6 +1,6 @@
 <?php
 
-namespace qbrema\Exceptions;
+namespace Transic\Exceptions;
 
 use Exception;
 use Illuminate\Validation\ValidationException;

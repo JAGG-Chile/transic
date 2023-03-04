@@ -1,6 +1,6 @@
 <?php
 
-namespace qbrema;
+namespace Transic;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace qbrema\Console;
+namespace Transic\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;

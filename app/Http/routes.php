@@ -15,6 +15,13 @@ Route::get('/', function () {
     return view('auth/login');
 });
 
+// Marcas
+Route::resource('administracion/marca','MarcaController');
+
+
+
+
+// Para borrar
 Route::resource('almacen/categoria','CategoriaController');
 Route::resource('almacen/producto','ProductoController');
 Route::resource('ventas/cliente','ClienteController');

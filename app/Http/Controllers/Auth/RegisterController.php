@@ -1,9 +1,9 @@
 <?php
 
-namespace qbrema\Http\Controllers\Auth;
+namespace Transic\Http\Controllers\Auth;
 
-use qbrema\User;
-use qbrema\Http\Controllers\Controller;
+use Transic\User;
+use Transic\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;

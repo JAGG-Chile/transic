@@ -1,10 +1,10 @@
 <?php
 
-namespace qbrema\Http\Controllers\Auth;
+namespace Transic\Http\Controllers\Auth;
 
-use qbrema\User;
+use Transic\User;
 use Validator;
-use qbrema\Http\Controllers\Controller;
+use Transic\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
