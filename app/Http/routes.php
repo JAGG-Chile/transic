@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 // Marcas
 Route::resource('administracion/marca','MarcaController');
+// Modelos
+Route::resource('administracion/modelo','ModeloController');
 
 
 

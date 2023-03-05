@@ -3,7 +3,7 @@
 <div class="row">
 	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 		
-		<h3>Ingresando Nueva Marca</h3>
+		<h3>Ingresando Nuevo Modelo</h3>
 
 		@if (count($errors)>0)
 		<div class="alert alert-danger">
@@ -14,15 +14,15 @@
 			</ul>
 		</div>
 		@endif
-		{!!Form::Open(array('url'=>'administracion/marca','method'=>'POST','autocomplete'=>'off'))!!}
+		{!!Form::Open(array('url'=>'administracion/modelo','method'=>'POST','autocomplete'=>'off'))!!}
 		{{Form::token()}}
 		<div class="form-group">
 			<label for="nombre">Nombre</label>
-			<input type="text" name="nombre" class="form-control" placeholder="Ingrese nombre de la marca">			
+			<input type="text" name="nombre" class="form-control" placeholder="Ingrese nombre de modelo">			
 		</div>		
 		<div class="form-group">
 			<button class="btn btn-success" type="Submit">Guardar</button>
-			<button class="btn btn-default" type="button"><a href="{{url('administracion/marca')}}">Cancelar y Volver atrás</a></button>
+			<button class="btn btn-default" type="button"><a href="{{url('administracion/modelo')}}">Cancelar y Volver atrás</a></button>
 		</div>		
 		{!!Form::close()!!}
 	</div>	

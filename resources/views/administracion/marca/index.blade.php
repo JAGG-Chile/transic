@@ -29,10 +29,10 @@
 						@endif
 						<td class="text-center">							
 							@if($marca->condicion)
-								<a href="{{URL::action('MarcaController@edit',$marca->id)}}"><button class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i></button></a>							
+								<a href="{{URL::action('MarcaController@edit',$marca->id)}}"><button class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i></button></a>							
 								<a href="" data-target="#modal-delete-{{$marca->id}}" data-toggle="modal"><button class="btn btn-xs btn-danger"><i class="fa fa-close"></i></button></a>							
 							@else
-								<button class="btn btn-xs btn-primary" disabled><i class="fa fa-pencil"></i></button>
+								<button class="btn btn-xs btn-warning" disabled><i class="fa fa-pencil"></i></button>
 								<a href="" data-target="#modal-delete-{{$marca->id}}" data-toggle="modal"><button class="btn btn-xs btn-success"><i class="fa fa-check"></i></button></a>							
 							@endif
 						</td>

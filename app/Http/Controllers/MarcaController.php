@@ -60,7 +60,7 @@ class MarcaController extends Controller
 
     public function show($id)
     {
-    	//return view("almacen.categoria.show",["categoria"=>categoria::findorFail($id)]);
+    	//
     }
 
     public function edit($id)
