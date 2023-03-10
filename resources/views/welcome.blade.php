@@ -7,10 +7,10 @@
             <!--<div class="panel panel-default">-->
                 <!--<div class="panel-heading">Bienvenido al Sistema-->
 
-                    <div class="panel-body">
-                        {{-- 
-                            LOGO DE PANTALLA PRINCIPAL
-                            <img src="{{URL::asset('img/Logo.png')}}" width="700"> --}}
+                    <div class="panel-body text-center">
+                        
+                            <!--LOGO DE PANTALLA PRINCIPAL-->
+                            <img src="{{URL::asset('img/logo.jpg')}}" width="700">
                     </div>
                 <!--</div>-->
         </div>

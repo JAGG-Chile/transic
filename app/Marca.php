@@ -19,3 +19,4 @@ class Marca extends Model
     protected $guarded=[
     ];
 }
+?>

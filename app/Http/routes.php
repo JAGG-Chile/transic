@@ -19,15 +19,17 @@ Route::get('/', function () {
 Route::resource('administracion/marca','MarcaController');
 // Modelos
 Route::resource('administracion/modelo','ModeloController');
+// Proveedores
+Route::resource('administracion/proveedor','ProveedorController');
 
 
 
 
-// Para borrar
+/////////////////////////////////////////////////////////////////// Para borrar  ////////////////////////////////////////////////////
 Route::resource('almacen/categoria','CategoriaController');
 Route::resource('almacen/producto','ProductoController');
 Route::resource('ventas/cliente','ClienteController');
-Route::resource('compras/proveedor','ProveedorController');
+//Route::resource('compras/proveedor','ProveedorController');
 Route::resource('compras/compra','CompraController');
 Route::resource('ventas/venta','VentaController');
 Route::resource('seguridad/usuario','UsuarioController');

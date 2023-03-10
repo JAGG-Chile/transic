@@ -19,3 +19,4 @@ class Modelo extends Model
     protected $guarded=[
     ];
 }
+?>

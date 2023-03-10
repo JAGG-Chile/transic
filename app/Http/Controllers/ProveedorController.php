@@ -3,9 +3,11 @@
 namespace Transic\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Transic\Personas;
+
+use Transic\Proveedor;
 use Illuminate\Support\Facades\Redirect;
-use Transic\Http\Requests\PersonaFormRequest;
+use Transic\Http\Requests\ProveedorFormRequest;
+use Illuminate\Support\Facades\Input;
 use DB;
 
 class ProveedorController extends Controller
@@ -21,63 +23,74 @@ class ProveedorController extends Controller
     	{
     		$query=trim($Request->get('searchText'));
     		
-    		$personas=DB::table('personas')
-    		->where('tipopersona','=','Proveedor')
+    		$proveedores=DB::table('proveedores')
     		->where('nombre','LIKE','%'.$query.'%')
-    		->orderBy('idpersona','desc')
+    		->orderBy('id','asc')
     		->paginate(7);
     		
-    		return view('compras.proveedor.index',["personas"=>$personas,"searchText"=>$query]);
+    		return view('administracion.proveedor.index',["proveedores"=>$proveedores,"searchText"=>$query]);
     	}
     }
 
     public function create()
     {
-    	return view("compras.proveedor.create");
+    	return view("administracion.proveedor.create");
     }
 
-    public function store(PersonaFormRequest $Request)
-    {
-    	$persona=new Personas;
-    	$persona->tipopersona='Proveedor';
-    	$persona->nombre=$Request->get('nombre');
-    	$persona->direccion=$Request->get('direccion');
-    	$persona->telefono=$Request->get('telefono');
-    	$persona->email=$Request->get('email');
-    	$persona->contacto=$Request->get('contacto');
-    	$persona->rut=$Request->get('rut');
-    	$persona->save();
-    	return Redirect::to('compras/proveedor');    	   	
+    public function store(ProveedorFormRequest $Request)
+	{
+    	$proveedor=new Proveedor;
+    	$proveedor->rut=$Request->get('rut');
+    	$proveedor->nombre=strtoupper($Request->get('nombre'));
+    	$proveedor->direccion=$Request->get('direccion');
+    	$proveedor->telefono=$Request->get('telefono');
+    	$proveedor->email=$Request->get('email');    	
+		$proveedor->condicion=1; 
+    	
+    	$proveedor->save();
+
+    	return Redirect::to('administracion/proveedor');    	   	
     }
 
     public function show($id)
     {
-    	return view("compras.proveedor.show",["personas"=>personas::findorFail($id)]);
+    	//return view("compras.proveedor.show",["personas"=>personas::findorFail($id)]);
     }
 
     public function edit($id)
     {
-    	return view("compras.proveedor.edit",["personas"=>personas::findorFail($id)]);
+    	return view("administracion.proveedor.edit",["proveedor"=>Proveedor::findorFail($id)]);
     }
 
-    public function update(PersonaFormRequest $Request, $id)
+    public function update(ProveedorFormRequest $Request, $id)
     {
-    	$persona=Personas::findorFail($id);
-    	$persona->nombre=$Request->get('nombre');
-    	$persona->direccion=$Request->get('direccion');
-    	$persona->telefono=$Request->get('telefono');
-    	$persona->email=$Request->get('email');
-    	$persona->contacto=$Request->get('contacto');
-    	$persona->rut=$Request->get('rut');
-    	$persona->update();
-    	return Redirect::to('compras/proveedor'); 
+    	$proveedor=Proveedor::findorFail($id);
+
+		$proveedor->rut=$Request->get('rut');
+    	$proveedor->nombre=strtoupper($Request->get('nombre'));
+    	$proveedor->direccion=$Request->get('direccion');
+    	$proveedor->telefono=$Request->get('telefono');
+    	$proveedor->email=$Request->get('email');    	
+    	
+    	$proveedor->update();
+
+    	return Redirect::to('administracion/proveedor'); 
     }
 
     public function destroy($id)
     {
-    	$persona=Personas::findorFail($id);
-    	$persona->tipopersona="Inactivo";
-    	$persona->update();
-    	return Redirect::to('compras/proveedor'); 
+    	$proveedor = Proveedor::findorFail($id);
+
+        if ($proveedor->condicion){
+            // está activo
+           	$proveedor->condicion=0;
+        }else{
+            $proveedor->condicion=1;
+        };
+    	
+        $proveedor->update();
+
+    	return Redirect::to('administracion/proveedor'); 
     }
 }
+?>
