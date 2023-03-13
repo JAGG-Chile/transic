@@ -15,7 +15,7 @@ class ProductoController extends Controller
         $this->middleware('auth');
     }
     
-    public function consulta()
+ /*    public function consulta()
     {
         $personas=DB::table('personas')
         ->where('tipopersona','=','Cliente')
@@ -38,84 +38,118 @@ class ProductoController extends Controller
         ->get();
 
         return view('pdf.consulta_ctactexproducto',['productos'=>$productos]);
-    }
+    } */
     
     public function index(Request $Request)
     {
     	if ($Request)
     	{
     		$query=trim($Request->get('searchText'));
-    		$productos=DB::table('productos as p')
-    		->join('personas as per','p.idproveedor','=','per.idpersona')
-            ->join('categorias as c','p.idcategoria','=','c.idcategoria')
-    		->select('p.idproducto','c.nombre as categoria','per.nombre as proveedor','p.nombre','p.descripcion','p.precio','p.stockactual','p.estado','p.tipo')
-    		->where('p.nombre','LIKE','%'.$query.'%')
-    		->where('p.estado','=','Activo')
-    		->orwhere('p.idproducto','LIKE','%'.$query.'%')
-    		->orderBy('nombre','ASC')
-    		->paginate(6);
-    		return view('almacen.producto.index',["productos"=>$productos,"searchText"=>$query]);
+    		$articulos=DB::table('articulos as a')
+    		->join('marcas as mrc','a.id_marca','=','mrc.id')
+            ->join('modelos as mdl','mdl.id','=','a.id_modelo')
+            ->join('proveedores as p','p.id','=','a.id_proveedor')
+    		->select('a.id','a.nombre','a.id_marca','mrc.nombre as nombreMarca','a.id_modelo','mdl.nombre as nombreModelo','a.id_proveedor','p.nombre as nombreProveedor',
+                     'a.stockMinimo','a.stockActual','a.unidadMedida','a.saldoInicial','a.condicion')
+    		->where('a.nombre','LIKE','%'.$query.'%')    		    		
+    		->orderBy('a.nombre','ASC')
+    		->paginate(7);
+    		return view('administracion.producto.index',["articulos"=>$articulos,"searchText"=>$query]);
     	}
     }
 
     public function create()
     {
-    	$categorias=DB::table('categorias')->where('condicion','=','1')->orderBy('nombre','asc')->get();
-        $personas=DB::table('personas')->where('tipopersona','=','Proveedor')->orderBy('nombre','asc')->get();
-    	return view("almacen.producto.create",["categorias"=>$categorias,"personas"=>$personas]);
+    	$marcas=DB::table('marcas')
+        ->where('condicion','=',true)
+        ->orderBy('nombre','asc')
+        ->get();
+
+        $modelos=DB::table('modelos')
+        ->where('condicion','=',true)
+        ->orderBy('nombre','asc')
+        ->get();
+
+        
+        $proveedores=DB::table('proveedores')
+        ->where('condicion','=',true)
+        ->orderBy('nombre','asc')
+        ->get();
+
+    	return view("administracion.producto.create",["marcas"=>$marcas,
+                                                       "modelos"=>$modelos,
+                                                       "proveedores"=>$proveedores]);
     }
 
     public function store(ProductoFormRequest $Request)
     {
-    	$producto=new Productos;
-    	$producto->idcategoria=$Request->get('idcategoria');
-    	$producto->idproveedor=$Request->get('idproveedor');
-    	$producto->nombre=$Request->get('nombre');
-    	$producto->descripcion=$Request->get('descripcion');
-    	$producto->precio=$Request->get('precio');
-    	$producto->stockactual=$Request->get('stockactual');
-    	$producto->estado="Activo";
-    	$producto->tipo=$Request->get('tipo');
-        $producto->ult_inventario_fecha=$Request->get('ultinventariofecha');
-        $producto->ult_inventario_stock=$Request->get('ultinventariostock');
-    	$producto->save();
-    	return Redirect::to('almacen/producto');    	   	
+    	$articulo = new Productos;
+
+    	$articulo->nombre       = strtoupper($Request->get('nombre'));
+    	$articulo->id_proveedor = $Request->get('idProveedor');    	
+        $articulo->id_marca     = $Request->get('idMarca');    	
+        $articulo->id_modelo    = $Request->get('idModelo');
+    	$articulo->stockMinimo  = $Request->get('stockMinimo');
+    	$articulo->unidadMedida = $Request->get('unidadMedida');
+        $articulo->saldoInicial = $Request->get('saldoInicial');
+    	$articulo->condicion    = 1;
+    	
+    	$articulo->save();
+
+    	return Redirect::to('administracion/producto');      	
     }
 
     public function show(request $Request)
     {	  
-      
+       //
     }
 
     public function edit($id)
     {
-    	$producto=productos::findorFail($id);
-		$categorias=DB::table('categorias')->where('condicion','=','1')->get();
-        $personas=DB::table('personas')->where('tipopersona','=','Proveedor')->get();
-    	return view("almacen.producto.edit",["productos"=>$producto,"categorias"=>$categorias,"personas"=>$personas]);
+    	$articulo=Productos::findorFail($id);
+		$marcas=DB::table('marcas')->get();
+        $modelos=DB::table('modelos')->get();
+        $proveedores=DB::table('proveedores')->get();
+
+    	return view("administracion.producto.edit",["articulo"=>$articulo,
+                                                    "marcas"=>$marcas,
+                                                    "modelos"=>$modelos,
+                                                    "proveedores"=>$proveedores]);
     }
 
     public function update(ProductoFormRequest $Request, $id)
     {
-    	$producto=Productos::findorFail($id);
-    	$producto->idcategoria=$Request->get('idcategoria');
-    	$producto->idproveedor=$Request->get('idproveedor');
-    	$producto->nombre=$Request->get('nombre');
-    	$producto->descripcion=$Request->get('descripcion');
-    	$producto->precio=$Request->get('precio');
-    	$producto->stockactual=$Request->get('stockactual');
-    	$producto->tipo=$Request->get('tipo');
-        $producto->ult_inventario_fecha=$Request->get('ultinventariofecha');
-        $producto->ult_inventario_stock=$Request->get('ultinventariostock');
-    	$producto->update();
-    	return Redirect::to('almacen/producto'); 
+    	
+        $articulo=Productos::findorFail($id);
+
+        $articulo->nombre       = strtoupper($Request->get('nombre'));
+    	$articulo->id_proveedor = $Request->get('idProveedor');    	
+        $articulo->id_marca     = $Request->get('idMarca');    	
+        $articulo->id_modelo    = $Request->get('idModelo');
+    	$articulo->stockMinimo  = $Request->get('stockMinimo');
+    	$articulo->unidadMedida = $Request->get('unidadMedida');
+        //$articulo->saldoInicial = $Request->get('saldoInicial');    	
+    	
+    	$articulo->update();
+
+    	return Redirect::to('administracion/producto');
+
     }
 
     public function destroy($id)
     {
-    	$producto=Productos::findorFail($id);
-    	$producto->estado="Inactivo";
-    	$producto->update();
-    	return Redirect::to('almacen/producto'); 
+    	$articulo = Productos::findorFail($id);
+
+        if ($articulo->condicion){
+            // activo
+            $articulo->condicion=0;
+        }else{
+            $articulo->condicion=1;
+        }
+    	
+    	$articulo->update();
+
+    	return Redirect::to('administracion/producto'); 
+
     }
 }

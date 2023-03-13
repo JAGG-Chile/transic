@@ -6,25 +6,23 @@ use Illuminate\Database\Eloquent\Model;
 
 class Productos extends Model
 {
-    protected $table='productos';
+    protected $table='articulos';
 
-    protected $primaryKey='idproducto';
+    protected $primaryKey='id';
 
-    public $timestamps=false;
+    public $timestamps=true;
 
     protected $fillable=[
-    	'idproveedor',
-    	'nombre',
-    	'descripcion',
-    	'precio',
-    	'stockminimo',
-    	'stockactual',
-    	'idcategoria',
-    	'estado',
-		'ult_inventario_fecha',
-		'ult_inventario_stock'
+    	'id_proveedor',    	
+    	'id_marca',
+    	'id_modelo',
+		'nombre',
+    	'stockMinimo',
+    	'stockActual',
+    	'unidadMedida'		
     ];
 
     protected $guarded=[
     ];//
 }
+?>

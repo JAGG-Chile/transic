@@ -24,13 +24,10 @@ class ProductoFormRequest extends FormRequest
     public function rules()
     {
         return [
-        'idproveedor'=>'required',
-        'nombre'=>'required|max:150',
-        'descripcion'=>'max:150',
-        'precio'=>'required',
-        'stockactual'=>'required',
-        'idcategoria'=>'required',
-        'tipo'=>'required|max:1'
+            'idProveedor'=>'required',    	
+            'idMarca'=>'required',
+            'idModelo'=>'required',
+            'nombre'=>'required|max:50|unique:articulos,nombre,' . $this->id,          
         ];
     }
 }

@@ -102,7 +102,7 @@
                 <li><a href="{{url('almacen/categoria')}}""><i class="fa fa-circle-o"></i> Modelos</a></li>
                 --}}
                 <li><a href="#"><i class="fa fa-circle-o"></i> Compras</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> Articulos</a></li>
+                <li><a href="{{url('administracion/producto')}}"><i class="fa fa-circle-o"></i> Articulos</a></li>
                 <li><a href="{{url('administracion/vehiculo')}}"><i class="fa fa-circle-o"></i> Vehiculos</a></li>
                 <li><a href="{{url('administracion/proveedor')}}"><i class="fa fa-circle-o"></i> Proveedores</a></li>
                 <li><a href="{{url('administracion/marca')}}"><i class="fa fa-circle-o"></i> Marcas</a></li>

@@ -23,7 +23,8 @@ Route::resource('administracion/modelo','ModeloController');
 Route::resource('administracion/proveedor','ProveedorController');
 // Vehiculos
 Route::resource('administracion/vehiculo','VehiculoController');
-
+// Articulos
+Route::resource('administracion/producto','ProductoController');
 
 
 
