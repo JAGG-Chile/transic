@@ -50,6 +50,7 @@ class MarcaController extends Controller
 
     public function store(MarcaFormRequest $Request)
     {
+        
     	$marca              = new Marca;
     	$marca->nombre      = strtoupper($Request->get('nombre'));
         $marca->condicion   = 1;    // 1:activo 2:eliminado

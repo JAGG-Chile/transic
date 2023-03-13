@@ -21,11 +21,13 @@ Route::resource('administracion/marca','MarcaController');
 Route::resource('administracion/modelo','ModeloController');
 // Proveedores
 Route::resource('administracion/proveedor','ProveedorController');
+// Vehiculos
+Route::resource('administracion/vehiculo','VehiculoController');
 
 
 
 
-/////////////////////////////////////////////////////////////////// Para borrar  ////////////////////////////////////////////////////
+/* /////////////////////////////////////////////////////////////////// Para borrar  ////////////////////////////////////////////////////
 Route::resource('almacen/categoria','CategoriaController');
 Route::resource('almacen/producto','ProductoController');
 Route::resource('ventas/cliente','ClienteController');
@@ -62,9 +64,11 @@ Route::get('consulta_deudaxcliente', 'ClienteController@consulta');
 // rutas para la consulta de Cta.Cte. x Producto
 Route::post('resultado_ctactexproducto', 'PdfController@resultado_ctactexproducto');
 Route::get('consulta_ctactexproducto', 'ProductoController@ver');
-
+*/
 Route::Auth();
 Route::get('/logout','Auth\LoginController@logout');
 
 Route::get('/home', 'HomeController@index')->name('welcome');
-Route::get('/{slug?}', 'HomeController@index');
+Route::get('/{slug?}', 'HomeController@index'); 
+
+?>
